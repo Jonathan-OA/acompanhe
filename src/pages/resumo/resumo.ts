@@ -61,7 +61,7 @@ export class ResumoPage {
       });
       alert.present();
 
-    //this.sendEmail();
+    this.sendEmail();
 
     
   }

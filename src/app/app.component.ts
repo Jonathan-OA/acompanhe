@@ -26,5 +26,11 @@ export class MyApp {
     this.rootPage = AcompanhamentosPage;
     this.menuCtrl.close();
   }
+
+  logoutt(){
+    this.rootPage = HomePage;
+    this.menuCtrl.close();
+
+  }
 }
 

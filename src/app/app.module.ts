@@ -12,6 +12,7 @@ import { CadastrocolPage } from '../pages/cadastrocol/cadastrocol';
 import { PrincipalPage } from '../pages/principal/principal';
 import { ResumoPage } from '../pages/resumo/resumo';
 import { AcompanhamentosPage } from '../pages/acompanhamentos/acompanhamentos';
+import { AuthServiceProvider } from '../providers/auth-service/auth-service';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,9 @@ import { AcompanhamentosPage } from '../pages/acompanhamentos/acompanhamentos';
     StatusBar,
     SplashScreen,
     EmailComposer,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    AuthServiceProvider,
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    AuthServiceProvider
   ]
 
 })
