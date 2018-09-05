@@ -1,0 +1,84 @@
+<!--
+  Generated template for the ResumoPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+     <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title color="danger">Acompanhe</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+  <ion-row justify-content-around="">
+    <ion-col col-12 class="header_orc">
+        Resumo do Pedido 
+    </ion-col>
+  </ion-row>
+  <ion-row justify-content-around="">
+    <ion-col col-12 class="valor">
+      Valor Total: <b> R${{valortotal}},00</b>
+    </ion-col>
+  </ion-row>
+ 
+
+    <ion-row justify-content-around="">
+    <ion-col col-12 class="">
+      Selecione um colaborador:
+    </ion-col>
+  </ion-row>
+    <ion-list radio-group col-12 [(ngModel)]="colaborador">
+      <ion-item>
+        <ion-avatar item-start>
+          <img src="../../../assets/imgs/colaborador.png">
+        </ion-avatar>
+        <ion-label>Masculino</ion-label>
+        <ion-radio value="bruno" checked></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-avatar item-start>
+          <img src="../../../assets/imgs/colaborador.png">
+        </ion-avatar>
+        <ion-label>Feminino</ion-label>
+        <ion-radio value="marcela"></ion-radio>
+      </ion-item>
+    </ion-list>
+    <ion-row justify-content-around="">
+      <ion-col col-12 class="">
+        Selecione a forma de pagamento:
+      </ion-col>
+      <ion-list radio-group col-12 [(ngModel)]="pagamento">
+        <ion-item>
+          <ion-avatar item-start>
+            <img src="../../../assets/imgs/boleto.png">
+          </ion-avatar>
+          <ion-label>Boleto</ion-label>
+          <ion-radio value="boleto" checked></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-avatar item-start>
+            <img src="../../../assets/imgs/cartao.png">
+          </ion-avatar>
+          <ion-label>Cartão</ion-label>
+          <ion-radio value="cartao"></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-avatar item-start>
+            <img src="../../../assets/imgs/dinheiro.png">
+          </ion-avatar>
+          <ion-label>Dinheiro</ion-label>
+          <ion-radio value="dinheiro"></ion-radio>
+        </ion-item>
+      </ion-list>
+
+    <div align="center">
+      <button ion-button (click)="confirmar()">Confirmar</button>
+    </div>
+
+   </ion-row>
+</ion-content>

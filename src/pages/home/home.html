@@ -1,0 +1,37 @@
+<ion-content padding style="background-color: #dedede">
+  <ion-row justify-content-around="">
+      <ion-col col-12 class="header_login">
+          <div align="center">
+            <span>
+                <a href="#" style="font-size: 6vh">
+                  <img src="../../../assets/imgs/logo_acp.png" style="height: 50px">
+                   Acompanhe
+                </a>
+          </span>
+          </div>
+      </ion-col>
+    </ion-row>
+
+
+    <ion-list>
+        <ion-item>
+          <ion-label>Usuário</ion-label>
+          <ion-input type="text" [(ngModel)]="user"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label>Senha</ion-label>
+          <ion-input type="password"></ion-input>
+        </ion-item>
+      </ion-list>
+      <div align="center">
+        <button class="button" ion-button (click)="login()">Entrar</button>
+      </div>
+      <div align="center">
+        <button ion-button (click)="cadastro()">Solicite seu Serviço</button>
+      </div>
+      <div align="center">
+        <button ion-button (click)="cadastrocol()">Trabalhe Conosco</button>
+      </div>
+  
+</ion-content>
+  

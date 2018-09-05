@@ -1,0 +1,46 @@
+<!--
+  Generated template for the CadastroPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+    <ion-navbar>
+        <ion-title color="danger">Acompanhe</ion-title>
+    </ion-navbar>
+  
+  </ion-header>
+  
+  
+  <ion-content padding>
+      <ion-col col-12 class="header_orc" >
+          Cadastrar Novo Usuário 
+      </ion-col>
+      <ion-list>
+          <ion-item>
+              <ion-label>Nome</ion-label>
+              <ion-input type="text" ></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label>CPF</ion-label>
+                <ion-input type="text" ></ion-input>
+              </ion-item>
+            <ion-item>
+                <ion-label>Email</ion-label>
+                <ion-input type="email" ></ion-input>
+              </ion-item>
+              <ion-item>
+                  <ion-label>Telefone</ion-label>
+                  <ion-input type="email" ></ion-input>
+                </ion-item>
+          <ion-item>
+              <ion-label>Senha</ion-label>
+              <ion-input type="password"></ion-input>
+            </ion-item>
+        </ion-list>
+        <div align="center">
+            <button class="button" ion-button (click)="enviarCadastro()">Cadastrar</button>
+        </div>
+  </ion-content>
+  

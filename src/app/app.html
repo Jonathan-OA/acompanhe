@@ -1,0 +1,17 @@
+<ion-menu [content]="mycontent">
+    <ion-content>
+      <ion-list>
+        <ion-item>
+                <p>Orçamento</p>
+        </ion-item>
+        <button  ion-item (click)="acompanhamentos()">
+                <p>Acompanhamentos</p>
+        </button>
+        <ion-item>
+          <p>Sair</p>
+        </ion-item>
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+
+<ion-nav #mycontent  [root]="rootPage" ></ion-nav>
