@@ -20,23 +20,23 @@
       <ion-list>
           <ion-item>
               <ion-label>Nome</ion-label>
-              <ion-input type="text" ></ion-input>
+              <ion-input type="text" [(ngModel)]="userCad.nome"></ion-input>
             </ion-item>
             <ion-item>
                 <ion-label>CPF</ion-label>
-                <ion-input type="text" ></ion-input>
+                <ion-input type="text" [(ngModel)]="userCad.cpf"></ion-input>
               </ion-item>
             <ion-item>
                 <ion-label>Email</ion-label>
-                <ion-input type="email" ></ion-input>
+                <ion-input type="email" [(ngModel)]="userCad.email"></ion-input>
               </ion-item>
               <ion-item>
                   <ion-label>Telefone</ion-label>
-                  <ion-input type="email" ></ion-input>
+                  <ion-input type="phone" [(ngModel)]="userCad.telefone"></ion-input>
                 </ion-item>
           <ion-item>
               <ion-label>Senha</ion-label>
-              <ion-input type="password"></ion-input>
+              <ion-input type="password" [(ngModel)]="userCad.senha"></ion-input>
             </ion-item>
         </ion-list>
         <div align="center">

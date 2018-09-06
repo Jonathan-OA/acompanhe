@@ -13,6 +13,8 @@ import { PrincipalPage } from '../pages/principal/principal';
 import { ResumoPage } from '../pages/resumo/resumo';
 import { AcompanhamentosPage } from '../pages/acompanhamentos/acompanhamentos';
 import { AuthServiceProvider } from '../providers/auth-service/auth-service';
+import { HttpClientModule } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
@@ -26,6 +28,7 @@ import { AuthServiceProvider } from '../providers/auth-service/auth-service';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],

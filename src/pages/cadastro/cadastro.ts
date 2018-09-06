@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
+import { Observable } from 'rxjs/Observable';
 
 /**
  * Generated class for the CadastroPage page.
@@ -16,19 +18,29 @@ import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angu
 export class CadastroPage {
 
   tipo:string;
+  userCad = {nome : '', email: '', telefone: '', cpf: '', senha: ''};
+  data: Observable<any>;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public alertCtrl: AlertController) {
+  constructor(public navCtrl: NavController, private http:HttpClient, public navParams: NavParams, public alertCtrl: AlertController) {
     this.tipo = navParams.get('tipo');
   }
 
 
   enviarCadastro() {
-    let alertct  = this.alertCtrl.create({
-      title: 'Sucesso!',
-      subTitle: 'Cadastro Realizado!',
-      buttons: ['Fechar']
-    });
-    alertct.present();
+
+    var url = "http://www.acompanhe-jonathan-oa.c9users.io/WebService/cadastrar";
+    let postData = new FormData();
+    postData.append('nome', this.userCad.nome);
+    postData.append('email', this.userCad.email);
+    postData.append('cpf', this.userCad.cpf);
+    postData.append('telefone', this.userCad.telefone);
+    postData.append('senha', this.userCad.senha);
+    this.data = this.http.post(url, postData);
+    this.data
+        .subscribe(datat => {
+          console.log(datat);
+        })
+    
   }
   ionViewDidLoad() {
     console.log('ionViewDidLoad CadastroPage');
