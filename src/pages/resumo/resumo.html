@@ -32,27 +32,27 @@
       Selecione um colaborador:
     </ion-col>
   </ion-row>
-    <ion-list radio-group col-12 [(ngModel)]="colaborador">
+    <ion-list radio-group col-12 [(ngModel)]="resumo.colaborador">
       <ion-item>
         <ion-avatar item-start>
           <img src="../../../assets/imgs/colaborador.png">
         </ion-avatar>
         <ion-label>Masculino</ion-label>
-        <ion-radio value="bruno" checked></ion-radio>
+        <ion-radio value="masculino" checked></ion-radio>
       </ion-item>
       <ion-item>
         <ion-avatar item-start>
           <img src="../../../assets/imgs/colaborador.png">
         </ion-avatar>
         <ion-label>Feminino</ion-label>
-        <ion-radio value="marcela"></ion-radio>
+        <ion-radio value="feminino"></ion-radio>
       </ion-item>
     </ion-list>
     <ion-row justify-content-around="">
       <ion-col col-12 class="">
         Selecione a forma de pagamento:
       </ion-col>
-      <ion-list radio-group col-12 [(ngModel)]="pagamento">
+      <ion-list radio-group col-12 [(ngModel)]="resumo.pagamento">
         <ion-item>
           <ion-avatar item-start>
             <img src="../../../assets/imgs/boleto.png">

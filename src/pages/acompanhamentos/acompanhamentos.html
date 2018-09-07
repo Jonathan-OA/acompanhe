@@ -22,31 +22,28 @@
     </ion-row>
     <ion-row justify-content-around="">
         <ion-list  col-12>
-            <ion-item>
+            <ion-item *ngFor="let item of listAc">
               <ion-avatar item-start>
                 <img src="../../../assets/imgs/colaborador.png">
               </ion-avatar>
-              <h2>Jonathan</h2>
-              <p>Acompanhamento Hospital</p>
-              <ion-icon name="star"></ion-icon>
-              <ion-icon name="star"></ion-icon>
-              <ion-icon name="star"></ion-icon>
-              <ion-icon name="star"></ion-icon>
-              <ion-icon name="star"></ion-icon>
-              <span><p>25/08/2018</p></span>
-            </ion-item>
-            <ion-item>
-            <ion-avatar item-start>
-                <img src="../../../assets/imgs/colaborador.png">
+              <h2>{{item.nome}}</h2>
+              <p>{{item.local}}</p>
+              <p class="{{item.status}}">{{item.status}}</p>
+              <div *ngIf="item.avaliacao > 0">
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+              </div>
+              <ion-avatar *ngIf="item.avaliacao<=0" item-end>
+                <button class="avaliar">
+                  Avaliar
+                </button>
               </ion-avatar>
-              <h2>Marcela</h2>
-              <p>Acompanhamento Vacina</p>
-              <ion-icon name="star-outline"></ion-icon>
-              <ion-icon name="star"></ion-icon>
-              <ion-icon name="star"></ion-icon>
-              <ion-icon name="star"></ion-icon>
-              <ion-icon name="star"></ion-icon>
-              <span><p>29/08/2018</p></span>
+              
+              
+              <span><p>{{item.data}}</p></span>
             </ion-item>
           </ion-list>
     </ion-row>

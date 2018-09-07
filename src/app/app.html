@@ -1,9 +1,9 @@
 <ion-menu [content]="mycontent">
     <ion-content>
       <ion-list>
-        <ion-item>
-                <p>Orçamento</p>
-        </ion-item>
+        <button  ion-item (click)="orcamento()">
+            <p>Novo Orçamento</p>
+        </button>
         <button  ion-item (click)="acompanhamentos()">
                 <p>Acompanhamentos</p>
         </button>

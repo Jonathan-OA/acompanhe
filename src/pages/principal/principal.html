@@ -24,11 +24,15 @@
     <ion-list>
         <ion-item>
           <ion-label>Serviço</ion-label>
-          <ion-input type="text" ></ion-input>
+          <ion-input type="text" [(ngModel)]="acomp.servico"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label>Paciente</ion-label>
+          <ion-input type="text" [(ngModel)]="acomp.paciente"></ion-input>
         </ion-item>
         <ion-item>
             <ion-label>Tipo de Deficiência:</ion-label>
-            <ion-select [(ngModel)]="deficiencia">
+            <ion-select [(ngModel)]="acomp.deficiencia">
               <ion-option value="n">Nenhuma</ion-option>
               <ion-option value="a">Auditiva</ion-option>
               <ion-option value="v">Visual</ion-option>
@@ -38,19 +42,19 @@
         </ion-item>
         <ion-item>
           <ion-label>Data Inicial:</ion-label>
-          <ion-datetime displayFormat="MM/DD/YYYY" [(ngModel)]="event.month"></ion-datetime>
+          <ion-datetime displayFormat="MM/DD/YYYY" [(ngModel)]="event.data_ini"></ion-datetime>
         </ion-item>
         <ion-item>
             <ion-label>Data Final:</ion-label>
-            <ion-datetime displayFormat="MM/DD/YYYY" [(ngModel)]="event.month2"></ion-datetime>
+            <ion-datetime displayFormat="MM/DD/YYYY" [(ngModel)]="event.data_fim"></ion-datetime>
         </ion-item>
         <ion-item>
             <ion-label>Total de Horas:</ion-label>
-            <ion-input type="number" [(ngModel)]="totalhoras"></ion-input>
+            <ion-input type="number" [(ngModel)]="acomp.totalhoras"></ion-input>
           </ion-item>
           <ion-item>
             <ion-label>Local:</ion-label>
-            <ion-input type="text" ></ion-input>
+            <ion-input type="text" [(ngModel)]="acomp.local"></ion-input>
           </ion-item>
       </ion-list>
       <div align="center">

@@ -24,3 +24,31 @@ ion-navbar{
     font-size: 22px;
     font-weight: bold;
 }
+
+.Pendente{
+    color: white !important;
+    background-color: gray;
+    width: 30vw;
+    text-align: center;
+}
+
+.Aprovado{
+    color: white !important;
+    background-color: green;
+    width: 30vw;
+    text-align: center;
+}
+
+.Finalizado{
+    color: white !important;
+    background-color: rgb(32, 32, 151);
+    width: 30vw;
+    text-align: center;
+}
+
+.avaliar{
+    background-color: yellow;
+    border: 1px solid black;
+    color:black;
+    padding: 3px 3px;
+}

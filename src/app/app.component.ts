@@ -4,6 +4,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { MenuController } from 'ionic-angular';
 import { AcompanhamentosPage } from '../pages/acompanhamentos/acompanhamentos';
+import { PrincipalPage } from '../pages/principal/principal';
 
 import { HomePage } from '../pages/home/home';
 @Component({
@@ -24,6 +25,11 @@ export class MyApp {
 
   acompanhamentos(){
     this.rootPage = AcompanhamentosPage;
+    this.menuCtrl.close();
+  }
+
+  orcamento(){
+    this.rootPage = PrincipalPage;
     this.menuCtrl.close();
   }
 

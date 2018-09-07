@@ -4,6 +4,8 @@ import {PrincipalPage} from '../principal/principal';
 import {CadastroPage} from '../cadastro/cadastro';
 import {CadastrocolPage} from '../cadastrocol/cadastrocol';
 import { AuthServiceProvider } from '../../providers/auth-service/auth-service';
+import { Observable } from 'rxjs/Observable';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'page-home',
@@ -14,24 +16,32 @@ export class HomePage {
   user:string;
   loading: Loading;
   userLogin = { email: '', password: '' };
+  data: Observable<any>;
 
-  constructor(public navCtrl: NavController, private auth: AuthServiceProvider, private alertCtrl: AlertController, private loadingCtrl: LoadingController) {
+  constructor(public navCtrl: NavController, private auth: AuthServiceProvider, private http:HttpClient,  private alertCtrl: AlertController, private loadingCtrl: LoadingController) {
 
   }
 
   public login() {
-    this.showLoading()
-    this.auth.login(this.userLogin).subscribe(allowed => {
-      if (allowed) {        
-        this.navCtrl.setRoot(PrincipalPage,{user: this.userLogin.email});
-      } else {
-        this.showError("Access Denied");
+    this.showLoading();
+    if(this.userLogin.email.length > 0 && this.userLogin.password.length > 0){
+      
+      var url = "http://www.acompanhe-jonathan-oa.c9users.io/WebService/login/"+this.userLogin.email+"/"+this.userLogin.password;
+      this.data = this.http.get(url);
+      this.data
+          .subscribe(datat => {
+            console.log(datat);
+            if(datat.nome != 0){
+              this.navCtrl.setRoot(PrincipalPage, {user: datat.nome, userid: datat.id});
+            }else{
+              this.showError('Usuário/Senha inválidos');
+            }
+            
+          })
+      }else{
+        this.showError('Informe um usuário e senha');
       }
-    },
-      error => {
-        this.showError(error);
-      });
-    }
+  }
 
   showLoading() {
     this.loading = this.loadingCtrl.create({
@@ -46,7 +56,7 @@ export class HomePage {
  
     let alertCt = this.alertCtrl.create({
       title: 'Erro',
-      subTitle: 'Login / Senha inválido(s)',
+      subTitle: text,
       buttons: ['OK']
     });
     alertCt.present();
