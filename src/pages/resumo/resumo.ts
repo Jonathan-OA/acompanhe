@@ -4,6 +4,7 @@ import { EmailComposer } from '@ionic-native/email-composer';
 import { Form } from '@angular/forms';
 import { Observable } from 'rxjs/Observable';
 import { HttpClient } from '@angular/common/http';
+import { AuthServiceProvider } from '../../providers/auth-service/auth-service';
 
 /**
  * Generated class for the ResumoPage page.

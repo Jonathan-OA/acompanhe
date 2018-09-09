@@ -21,27 +21,27 @@
       <ion-list>
           <ion-item>
               <ion-label>Nome</ion-label>
-              <ion-input type="text" ></ion-input>
+              <ion-input type="text" [(ngModel)]="userCad.nome"></ion-input>
             </ion-item>
             <ion-item>
                 <ion-label>CPF</ion-label>
-                <ion-input type="text" ></ion-input>
+                <ion-input type="text" [(ngModel)]="userCad.cpf"></ion-input>
               </ion-item>
             <ion-item>
                 <ion-label>Email</ion-label>
-                <ion-input type="email" ></ion-input>
+                <ion-input type="email" [(ngModel)]="userCad.email"></ion-input>
               </ion-item>
               <ion-item>
                   <ion-label>Telefone</ion-label>
-                  <ion-input type="email" ></ion-input>
+                  <ion-input type="email" [(ngModel)]="userCad.telefone"></ion-input>
                 </ion-item>
           <ion-item>
               <ion-label>Currículo</ion-label>
-              <ion-input type="file"></ion-input>
+              <ion-input type="file" [(ngModel)]="userCad.curriculo"></ion-input>
             </ion-item>
         </ion-list>
         <div align="center">
-            <button class="button" ion-button (click)="enviarCadastroCol()">Enviar Currículo</button>
+            <button class="button" ion-button (click)="enviarCadastro()">Enviar Currículo</button>
         </div>
   </ion-content>
   

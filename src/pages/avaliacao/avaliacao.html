@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title color="danger">Avaliação</ion-title>
+    <ion-buttons end>
+      <button ion-button (click)="closeModal()"> Fechar </button>
+    </ion-buttons> 
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-row justify-content-around="">
+    <ion-col col-12>
+        <div align="center">
+          Avalie o acompanhamento realizado no dia {{datafim}}
+        </div>
+    </ion-col>
+  </ion-row>
+  <ion-row justify-content-center>
+      <ion-col col-sm-5 justify-content-center >
+        <div >
+            <a href="#" class="star"  (click)="nota(acompanhamento_id,1)" title="Avaliar"></a>
+            <a href="#" class="star" (click)="nota(acompanhamento_id,2)" title="Avaliar"></a>
+            <a href="#" class="star" (click)="nota(acompanhamento_id,3)" title="Avaliar"></a>
+            <a href="#" class="star" (click)="nota(acompanhamento_id,4)" title="Avaliar"></a>
+            <a href="#" class="star" (click)="nota(acompanhamento_id,5)" title="Avaliar"></a>
+        </div>
+      </ion-col>
+    </ion-row>
+    <div align="center">
+        Clique na estrela referente a nota do serviço (de 1 a 5)
+      </div>
+</ion-content>

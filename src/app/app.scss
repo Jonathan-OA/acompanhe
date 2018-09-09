@@ -30,6 +30,8 @@ ion-navbar{
     background-color: gray;
     width: 30vw;
     text-align: center;
+    padding: 4px;
+    font-size: 1em !important;
 }
 
 .Aprovado{
@@ -37,12 +39,16 @@ ion-navbar{
     background-color: green;
     width: 30vw;
     text-align: center;
+    padding: 4px;
+    font-size: 1em !important;
 }
 
 .Finalizado{
     color: white !important;
     background-color: rgb(32, 32, 151);
     width: 30vw;
+    padding: 4px;
+    font-size: 1em !important;
     text-align: center;
 }
 
@@ -52,3 +58,19 @@ ion-navbar{
     color:black;
     padding: 3px 3px;
 }
+
+.star:hover:before {
+    background-image: url('../../../assets/imgs/star2.png');
+ }
+
+ .star{
+    width: 40px;
+    height:40px;
+    display:block;
+    background:transparent url('../../../assets/imgs/star1.png') center top no-repeat;
+    float:left;
+ }
+
+ .rating > .star:hover:before {
+    background-image: url('../../../assets/imgs/star2.png');
+ }

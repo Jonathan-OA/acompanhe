@@ -30,8 +30,9 @@ export class HomePage {
       this.data = this.http.get(url);
       this.data
           .subscribe(datat => {
-            console.log(datat);
+            //console.log(datat);
             if(datat.nome != 0){
+              this.auth.setUser(datat.nome,this.userLogin.email,datat.id );
               this.navCtrl.setRoot(PrincipalPage, {user: datat.nome, userid: datat.id});
             }else{
               this.showError('Usuário/Senha inválidos');

@@ -30,16 +30,14 @@
               <p>{{item.local}}</p>
               <p class="{{item.status}}">{{item.status}}</p>
               <div *ngIf="item.avaliacao > 0">
-                <ion-icon name="star"></ion-icon>
-                <ion-icon name="star"></ion-icon>
-                <ion-icon name="star"></ion-icon>
-                <ion-icon name="star"></ion-icon>
-                <ion-icon name="star"></ion-icon>
+                <ion-icon *ngIf="item.avaliacao>0" name="star" style="font-size:2em"></ion-icon>
+                <ion-icon *ngIf="item.avaliacao>1" name="star" style="font-size:2em"></ion-icon>
+                <ion-icon *ngIf="item.avaliacao>2" name="star" style="font-size:2em"></ion-icon>
+                <ion-icon *ngIf="item.avaliacao>3" name="star" style="font-size:2em"></ion-icon>
+                <ion-icon *ngIf="item.avaliacao>4" name="star" style="font-size:2em"></ion-icon>
               </div>
               <ion-avatar *ngIf="item.avaliacao<=0" item-end>
-                <button class="avaliar">
-                  Avaliar
-                </button>
+                <button ion-button  (click)="avaliar(item.id, item.data)"> Avaliar </button>
               </ion-avatar>
               
               

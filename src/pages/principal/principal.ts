@@ -4,6 +4,7 @@ import {ResumoPage} from '../resumo/resumo'
 import { MenuController } from 'ionic-angular';
 import { Observable } from 'rxjs/Observable';
 import { HttpClient } from '@angular/common/http';
+import { AuthServiceProvider } from '../../providers/auth-service/auth-service';
 
 /**
  * Generated class for the PrincipalPage page.
@@ -28,10 +29,12 @@ export class PrincipalPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams, 
               public alertCtrl: AlertController, public menuC:MenuController,
-               private http:HttpClient, private loadingCtrl: LoadingController) {
+               private http:HttpClient, private loadingCtrl: LoadingController,
+              public auth:AuthServiceProvider) {
 
         this.user = navParams.get('user');
         this.userid = navParams.get('userid');
+        //console.log(this.auth.currentUser);
   }
 
   public event = {
@@ -42,6 +45,7 @@ export class PrincipalPage {
   }
 
   enviarOrcamento() {
+      //Valor Hora
       this.valortotal = this.acomp.totalhoras * 15;
       
 
@@ -57,7 +61,7 @@ export class PrincipalPage {
         postData.append('data_ini', this.event.data_ini);
         postData.append('data_fim', this.event.data_fim);
         postData.append('paciente', this.acomp.paciente);
-
+        
         this.navCtrl.setRoot(ResumoPage,{valortot:this.valortotal, postDatas: postData, userid: this.userid});
       }else{
         this.showError('Preencha os campos obrigatórios!');

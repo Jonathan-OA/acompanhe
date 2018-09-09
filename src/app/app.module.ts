@@ -10,6 +10,7 @@ import { HomePage } from '../pages/home/home';
 import { CadastroPage } from '../pages/cadastro/cadastro';
 import { CadastrocolPage } from '../pages/cadastrocol/cadastrocol';
 import { PrincipalPage } from '../pages/principal/principal';
+import { AvaliacaoPage } from '../pages/avaliacao/avaliacao';
 import { ResumoPage } from '../pages/resumo/resumo';
 import { AcompanhamentosPage } from '../pages/acompanhamentos/acompanhamentos';
 import { AuthServiceProvider } from '../providers/auth-service/auth-service';
@@ -24,7 +25,8 @@ import { HttpClientModule } from '@angular/common/http';
     CadastroPage,
     CadastrocolPage,
     PrincipalPage,
-    AcompanhamentosPage
+    AcompanhamentosPage,
+    AvaliacaoPage
   ],
   imports: [
     BrowserModule,
@@ -39,13 +41,13 @@ import { HttpClientModule } from '@angular/common/http';
     CadastroPage,
     CadastrocolPage,
     PrincipalPage,
-    AcompanhamentosPage
+    AcompanhamentosPage,
+    AvaliacaoPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
     EmailComposer,
-    AuthServiceProvider,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     AuthServiceProvider
   ]
